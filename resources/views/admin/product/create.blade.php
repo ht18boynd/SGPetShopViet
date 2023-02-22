@@ -67,7 +67,7 @@
               <input type="number" id="stock" name="stock" class="form-control">
             </div>
             <div class="form-group">
-              <label for="role">SalePrice % :</label>
+              <label for="sale">SalePrice % :</label>
               <select id="sale" name="sale" class="form-control custom-select" required>
                  <option value="0"selected>0%</option>
                 <option value="5">5%</option>
@@ -84,12 +84,13 @@
             <div class="form-group">
               <label for="brand">Brand</label>
               <select id="brand" name="brand" class="form-control custom-select" required>
-                @foreach($category as $item)
+               @foreach($category as $item)
                  <option value="{{$item->category_name}}"selected>{{$item->category_name}}</option>
-                @endforeach
+              @endforeach
               
               </select>
             </div>
+             
             <div class="form-group">
               <label for="status">Status :</label>
               <select id="status" name="status" class="form-control custom-select" required>
