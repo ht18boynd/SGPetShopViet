@@ -80,7 +80,17 @@
                 <option value="99">99%</option>
 
               </select>
-            </div><div class="form-group">
+            </div>
+            <div class="form-group">
+              <label for="brand">Brand</label>
+              <select id="brand" name="brand" class="form-control custom-select" required>
+                @foreach($category as $item)
+                 <option value="{{$item->category_name}}"selected>{{$item->category_name}}</option>
+                @endforeach
+              
+              </select>
+            </div>
+            <div class="form-group">
               <label for="status">Status :</label>
               <select id="status" name="status" class="form-control custom-select" required>
                  <option value="1"selected>Stocking</option>

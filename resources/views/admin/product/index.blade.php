@@ -66,8 +66,8 @@
                   <td>{{ $price=number_format($item->price) }} $</td>
                   <td>{{ $item->stock }}</td>                 
                   <td>{{ $item->sale }} %</td>
-                  <td>{{ $item-> category_id}} </td>
-                  <td>{{ $item->brand_id }} </td>
+                  <td>{{ $item-> category}} </td>
+                  <td>{{ $item->brand}} </td>
                   
                   <td class="project-state">
                   

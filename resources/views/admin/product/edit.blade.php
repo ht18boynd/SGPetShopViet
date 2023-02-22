@@ -96,6 +96,14 @@
               </select>
             </div>
             <div class="form-group">
+            <label for="brand">Brand</label>
+              <select id="brand" name="brand" class="form-control custom-select" required>
+                @foreach($category as $item)
+                <option value="{{item->category_name}}" {{  ($product->brand) ==  ($item->category_name) ? 'selected' : ''}}>{{$item->category_name}}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group">
               <label for="image">Image</label>
               <img src="{{asset('/images/'.$product->image)}}" width="150px" height="200px">
             <input type="file" id="image" name="photo" class="form-control-file" value="{{$product->image}}">
