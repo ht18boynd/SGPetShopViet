@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,8 +18,9 @@ class HomeController extends Controller
         $order = Order::all();
         $ord = OrderDetail::all();
         $user = User::all();
+        $cate=Category::all();
         
-        return view ('admin.homedb',compact('prods' , 'order','user','ord'));
+        return view ('admin.homedb',compact('prods' , 'order','user','ord','cate'));
     }
 
 }

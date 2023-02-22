@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrderDetailController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\CategoryController;
 
 use App\Http\Controllers\FE\HomeController as FEController;
 
@@ -64,6 +65,8 @@ Route::group(['middleware'=>'canLogin'], function() {
         Route::resource('/orderdetail', OrderDetailController::class);
 
         Route::resource('/order', OrderController::class);
+
+        Route::resource('/category',CategoryController::class);
     });
         
 });

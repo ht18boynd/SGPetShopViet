@@ -20,6 +20,10 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->integer('price')->nullable();
             $table->string('image')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('stock')->nullable();
+            $table->string('sale')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

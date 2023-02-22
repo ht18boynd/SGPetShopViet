@@ -17,6 +17,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->timestamp('order_date')->nullable;
+           
+            $table->string('shipping_name')->nullable();
+            $table->string('shipping_phone')->nullable();
+            $table->string('shipping_email')->nullable();
+            $table->string('shipping_address')->nullable();
             $table->timestamps();
         });
     }
