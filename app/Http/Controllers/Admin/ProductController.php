@@ -87,9 +87,9 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Product $product , Category $category)
     {
-        return view('admin.product.edit', compact('product'));
+        return view('admin.product.edit', compact('product','category'));
     }
 
     /**
@@ -99,10 +99,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Product $product , Category $category) 
     {
         $prodData = $request->all();
+        $category=Category::all();
         $prodData['slug'] = \Str::slug($request->name);
+        $prodData['brand'] = $category->category_name;
         if($request->hasFile('photo'))
         {
             $file=$request->file('photo');
@@ -122,7 +124,7 @@ class ProductController extends Controller
         }
         
         $product->update($prodData);
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.product.index',compact('category'));
     }
 
     /**
