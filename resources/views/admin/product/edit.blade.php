@@ -99,7 +99,7 @@
             <label for="brand">Brand</label>
               <select id="brand" name="brand" class="form-control custom-select" required>
                 @foreach($category as $item)
-                <option value="{{item->category_name}}" {{  ($product->brand) ==  ($item->category_name) ? 'selected' : ''}}>{{$item->category_name}}</option>
+                <option value="{{$item->category_name}}" {{  ($product->brand) ==  ($item->category_name) ? 'selected' : ''}}>{{$item->category_name}}</option>
                 @endforeach
               </select>
             </div>
